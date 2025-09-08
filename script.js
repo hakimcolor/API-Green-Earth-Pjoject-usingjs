@@ -81,6 +81,9 @@ const showTrees = (plants) => {
       'p-2',
       'rounded-xl',
       "h-100"
+      , "w-80",
+    
+    "md:mt-0"
     );
     card.innerHTML = `<img class="w-full h-40 object-cover rounded"" src=${plant.image} alt="" />
               <div class="plant-description flex flex-col gap-2">
@@ -91,7 +94,7 @@ const showTrees = (plants) => {
                   <p class="font-bold">৳<span>${plant.price}</span></p>
                 </div>
               </div>
-              <button class="bg-[#15803d] cursor-pointer text-white py-3 w-full rounded-3xl">Add To Cart</button>`;
+              <button class="bg-[#15803d] cursor-pointer text-white hover:bg-[#86cea0] py-3 w-full rounded-3xl">Add To Cart</button>`;
 
     const treeName = card.querySelector('h4');
     treeName.addEventListener('click', () => openModal(plant));
