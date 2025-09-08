@@ -8,31 +8,59 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://kit.fontawesome.com/0eecd22d19.js" crossorigin="anonymous"></script>
   </head>
-  <body class="bg-[#f0fdf4]">
-    <header>
-      <nav class="flex px-32 py-5 justify-between items-center bg-[#15803d] text-white max-sm:flex-col max-sm:gap-2">
-        <div class="website-title text-xl font-bold">
-          <a href="index.html"><h2>Green Earth</h2></a>
-        </div>
-        <div class="nav-links flex gap-6">
-          <a href="">About</a>
-          <a href="">Gallery</a>
-          <a class="max-sm:text-nowrap" href="">Plant a tree</a>
-        </div>
-        <div class="nav-button">
-          <button class="bg-[#facc15] text-[#15803d] px-5 py-3 rounded-3xl">Plant a Tree</button>
-        </div>
-      </nav>
-      <div class="hero flex justify-between bg-[#cff0dc]">
-        <img class="max-sm:hidden" src="./assets/hero-leaf1.png" alt="" />
-        <div class="hero-content flex flex-col">
-          <h1 class="text-5xl font-bold text-center">Plant a Tree, Grow a Future</h1>
-          <p class="text-center">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
-          <button class="bg-[#facc15] text-[#15803d] px-5 py-3 rounded-3xl">Get Involved</button>
-        </div>
-        <img class="max-sm:hidden" src="./assets/hero-leaf2.png" alt="" />
+  <body class="font-sans bg-[#f0fdf4] text-gray-900 relative">
+    <!-- nav -->
+    <nav
+      class="bg-green-700 text-white flex flex-col md:flex-row items-center justify-between py-4 px-10 gap-y-4 md:gap-y-0"
+    >
+     
+      <h1 class="text-lg md:text-xl font-bold">Green Earth</h1>
+
+      <ul class="flex gap-6 text-sm md:text-base">
+        <li class="cursor-pointer hover:text-yellow-300">About</li>
+        <li class="cursor-pointer hover:text-yellow-300">Gallery</li>
+        <li class="cursor-pointer hover:text-yellow-300">Plant a Tree</li>
+      </ul>
+
+      <button
+        class="bg-yellow-400 text-green-900 px-5 py-2 rounded-full font-medium hover:bg-yellow-500 transition"
+      >
+        Plant a Tree
+      </button>
+    </nav>
+
+    <!-- bnrSection -->
+    <section
+      class="relative bg-green-100 flex flex-col items-center justify-center text-center px-6 py-20 md:py-28"
+    >
+      <img
+        src="./assets/hero-leaf1.png"
+        alt="Leaf Left"
+        class="hidden sm:block absolute left-0 bottom-0 w-[8rem] md:w-[12rem] lg:w-[16rem] 2xl:w-[35rem] xl:w-[22rem]"
+      />
+
+      <img
+        src="./assets/hero-leaf2.png"
+        alt="Leaf Right"
+        class="hidden sm:block absolute right-0 bottom-0 w-[8rem] md:w-[12rem] lg:w-[16rem] 2xl:w-[35rem] xl:w-[22rem]"
+      />
+
+      <div class="relative z-10 max-w-2xl">
+        <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+          Plant a Tree, Grow a Future
+        </h1>
+        <p class="mt-4 text-gray-600 text-sm md:text-base">
+          Join our mission to plant 1 million trees and make the Earth greener
+          for future <br />
+          generations.
+        </p>
+        <button
+          class="mt-6 bg-yellow-400 text-green-900 px-6 py-2 md:px-8 md:py-3 rounded-full font-medium hover:bg-yellow-500 transition"
+        >
+          Get Involved
+        </button>
       </div>
-    </header>
+    </section>
     <main class="">
       <div id="choose-your-trees" class="choose-your-trees mx-[135px] py-[100px]">
         <h2 class="text-[32px] font-semibold text-center mb-10">Choose Your Trees</h2>
