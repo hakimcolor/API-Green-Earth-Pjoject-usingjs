@@ -25,7 +25,7 @@ const category = (categories) => {
     li.innerHTML = `
             <button 
                 id="category-${category.id}" 
-                class="category-btn w-full rounded text-left px-1.5 py-1 cursor-pointer hover:bg-[#00ff5e]"
+                class="category-btn w-full rounded text-left px-1.5 py-1 block text-gray-800 hover:bg-green-700 cursor-pointer hover:text-white px-3 py-2 rounded" 
                 data-id="${category.id}">
                 ${category.category_name}
             </button>
@@ -79,18 +79,19 @@ const showTrees = (plants) => {
       'gap-2',
       'bg-white',
       'p-2',
-      'rounded'
+      'rounded-xl',
+      "h-100"
     );
-    card.innerHTML = `<img class="w-full h-48 object-cover rounded"" src=${plant.image} alt="" />
+    card.innerHTML = `<img class="w-full h-40 object-cover rounded"" src=${plant.image} alt="" />
               <div class="plant-description flex flex-col gap-2">
                 <h4 class="text-[14px] font-semibold cursor-pointer">${plant.name}</h4>
                 <p class="text-[12px] min-h-23">${plant.description}</p>
                 <div class="category-price flex justify-between items-center">
                   <p class="text-[14px] font-medium py-1 px-3 bg-[#dcfce7] rounded-2xl text-[#15803d]">${plant.category}</p>
-                  <p>৳<span>${plant.price}</span></p>
+                  <p class="font-bold">৳<span>${plant.price}</span></p>
                 </div>
               </div>
-              <button class="bg-[#15803d] text-white py-3 w-full rounded-3xl">Add To Cart</button>`;
+              <button class="bg-[#15803d] cursor-pointer text-white py-3 w-full rounded-3xl">Add To Cart</button>`;
 
     const treeName = card.querySelector('h4');
     treeName.addEventListener('click', () => openModal(plant));
@@ -248,3 +249,9 @@ window.addEventListener('DOMContentLoaded', () => {
 loadTrees();
 loadCategory();
 cartContainer.innerHTML = '';
+const hamburger = document.getElementById('hamburger');
+const categories = document.getElementById('categories');
+
+hamburger.addEventListener('click', () => {
+  categories.classList.toggle('hidden');
+});
