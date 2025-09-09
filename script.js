@@ -73,6 +73,11 @@ const showTrees = (plants) => {
   plants.forEach((plant) => {
     const card = document.createElement('div');
     card.classList.add(
+      'lg:h-100',
+      'w-80',
+
+      'md:mt-0',
+      'mt-0',
       'card',
       'flex',
       'flex-col',
@@ -80,10 +85,9 @@ const showTrees = (plants) => {
       'bg-white',
       'p-2',
       'rounded-xl',
-      "h-100"
-      , "w-80",
-    
-    "md:mt-0"
+
+      'sm:w-72',
+      'md:w-80'
     );
     card.innerHTML = `<img class="w-full h-40 object-cover rounded"" src=${plant.image} alt="" />
               <div class="plant-description flex flex-col gap-2">
@@ -91,7 +95,8 @@ const showTrees = (plants) => {
                 <p class="text-[12px] min-h-23">${plant.description}</p>
                 <div class="category-price flex justify-between items-center">
                   <p class="text-[14px] font-medium py-1 px-3 bg-[#dcfce7] rounded-2xl text-[#15803d]">${plant.category}</p>
-                  <p class="font-bold">৳<span>${plant.price}</span></p>
+                  <p class="font-bold  text-xl">৳<span> ${plant.price}</span></p>
+                   
                 </div>
               </div>
               <button class="bg-[#15803d] cursor-pointer text-white hover:bg-[#86cea0] py-3 w-full rounded-3xl">Add To Cart</button>`;
@@ -112,7 +117,11 @@ const openModal = (plant) => {
         <h2 class="text-2xl font-bold mb-4">${plant.name}</h2>
         <img class="w-full h-64 object-cover rounded mb-4" src="${plant.image}" alt="${plant.name}" />
         <p class="mb-2"><strong>Category:</strong> ${plant.category}</p>
-        <p class="mb-2"><strong>Price:</strong> ৳${plant.price}</p>
+        <p class="mb-2">
+  <strong>Price:  ৳ </strong> 
+  ${plant.price}
+</p>
+
         <p><strong>Description:</strong> ${plant.description}</p>
     `;
   modal.classList.remove('hidden');
@@ -126,11 +135,10 @@ const closeModal = () => {
 
 modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', (e) => {
-  if (e.target === modal) closeModal(); // click outside modal content
+  if (e.target === modal) closeModal();
 });
 
 const addToCart = (plant) => {
-  // Check if item already exists
   let existingItem = Array.from(cartContainer.children).find(
     (item) => item.querySelector('h4').textContent === plant.name
   );
@@ -166,9 +174,11 @@ const addToCart = (plant) => {
     item.querySelector('.increase').addEventListener('click', () => {
       const qtyEl = item.querySelector('.item-qty');
       qtyEl.textContent = parseInt(qtyEl.textContent) + 1;
-      updateTotal();
-    });
+ updateTotal();
 
+     
+    });
+ alert(`${plant.name} has been added to teh card`);
     // Decrease quantity
     item.querySelector('.decrease').addEventListener('click', () => {
       const qtyEl = item.querySelector('.item-qty');
